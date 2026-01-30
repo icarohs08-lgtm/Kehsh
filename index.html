@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerar Código Aleatório</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #codigo {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #008000;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Gerador de Código Aleatório</h2>
+
+    <button onclick="gerarCodigo()">Gerar Código</button>
+
+    <div id="codigo"></div>
+
+    <script>
+        function gerarCodigo() {
+            const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            let codigo = "";
+
+            for (let i = 0; i < 12; i++) { 
+                codigo += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+            }
+
+            document.getElementById("codigo").innerText = codigo;
+        }
+    </script>
+
+</body>
+</html>
